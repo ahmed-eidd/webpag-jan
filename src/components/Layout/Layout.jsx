@@ -6,10 +6,21 @@ import MoreInfo from '../MoreInfo/MoreInfo';
 
 const Layout = () => {
   return (
-    <Container maxW='container.xl'>
+    <Container
+      bg='white'
+      maxW='container.xl'
+      borderWidth='1px'
+      borderRadius='lg'
+      my='10'
+      p='5'
+      style={{
+        boxShadow:
+          'rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px',
+      }}
+    >
       <Header />
 
-      <MoreInfo  />
+      <MoreInfo />
       <GetStarted />
       <AnyHelp />
     </Container>

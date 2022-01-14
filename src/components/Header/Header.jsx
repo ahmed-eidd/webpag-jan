@@ -5,6 +5,7 @@ import {
   Heading,
   Text,
   Link as ChakraLink,
+  Center,
 } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
@@ -59,85 +60,71 @@ const Header = ({ companyName, onGetStartedClick, onMoreInfoClick }) => {
     <>
       <Transition in={open} timeout={duration}>
         {(state) => (
-          <Box height='100vh' my='20px' className={classes.Header}>
+          <Box height='100vh' my='20px'>
             <ContactUsButton
               style={{ ...defaultStyle('500'), ...transitionStyles[state] }}
             />
-            {/* <Flex
-              justify='flex-end'
-              align='center'
-              gap='5px'
-              style={{ ...defaultStyle('500'), ...transitionStyles[state] }}
-            >
-              <Button
-                href='https://www.facebook.com'
-                variant='solid'
-                isExternal
-                as={ChakraLink}
-              >
-                Contact
-              </Button>
-              <i
-                className={`${classes.TelegramIcon} fab fa-telegram-plane`}
-              ></i>
-            </Flex> */}
 
-            <Heading
-              textAlign='center'
-              style={{
-                ...defaultStyle('500', '500'),
-                ...transitionStyles[state],
-              }}
-            >
-              {companyName || 'Company Name'}
-            </Heading>
-            <Text
-              my='30px'
-              padding='10px 30px'
-              textAlign='center'
-              style={{
-                transform: 'translateY(60vh)',
-                ...defaultStyle('500', '1000'),
-                ...transformTransitionStyles[state],
-              }}
-            >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
-              nemo nisi, cumque consequuntur aspernatur molestias. Impedit est
-              omnis consequatur. Alias!
-            </Text>
-            <Flex
-              align='center'
-              justify='center'
-              gap='10%'
-              style={{
-                transform: 'translateY(60vh)',
-                ...defaultStyle('500', '1000'),
-                ...transformTransitionStyles[state],
-              }}
-            >
-              <Button
-                style={btnStyle}
-                as={Link}
-                onClick={onGetStartedClick}
-                to='get-started'
-                smooth={true}
-                duration={500}
-                colorScheme='green'
-              >
-                Get Started
-                {console.log(onGetStartedClick)}
-              </Button>
-              <Button
-                style={btnStyle}
-                onClick={onMoreInfoClick}
-                to='more-info'
-                spy={true}
-                smooth={true}
-                duration={500}
-                as={Link}
-              >
-                More Info
-              </Button>
+            <Flex height='80%' justify='center' align='center'>
+              <Box>
+                <Heading
+                  textAlign='center'
+                  style={{
+                    ...defaultStyle('500', '500'),
+                    ...transitionStyles[state],
+                  }}
+                >
+                  {companyName || 'Company Name'}
+                </Heading>
+                <Text
+                  my='30px'
+                  padding='10px 30px'
+                  textAlign='center'
+                  style={{
+                    transform: 'translateY(60vh)',
+                    ...defaultStyle('500', '1000'),
+                    ...transformTransitionStyles[state],
+                  }}
+                >
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Labore nemo nisi, cumque consequuntur aspernatur molestias.
+                  Impedit est omnis consequatur. Alias!
+                </Text>
+                <Flex
+                  align='center'
+                  justify='center'
+                  gap='10%'
+                  style={{
+                    transform: 'translateY(60vh)',
+                    ...defaultStyle('500', '1000'),
+                    ...transformTransitionStyles[state],
+                  }}
+                >
+                  <Button
+                    style={btnStyle}
+                    as={Link}
+                    onClick={onGetStartedClick}
+                    to='get-started'
+                    smooth={true}
+                    duration={500}
+                    colorScheme='green'
+                  >
+                    Get Started
+                    {console.log(onGetStartedClick)}
+                  </Button>
+                  <Button
+                    style={btnStyle}
+                    onClick={onMoreInfoClick}
+                    to='more-info'
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    as={Link}
+                  >
+                    More Info
+                  </Button>
+                </Flex>
+              </Box>
             </Flex>
           </Box>
         )}
