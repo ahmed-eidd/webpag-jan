@@ -4,7 +4,15 @@ import Section from '../UI/Section/Section';
 
 const GetStarted = () => {
   return (
-    <Section name='get-started' heading='Get started'>
+    <Section
+
+      // the "name" prop is for the scroll animation
+      name='get-started'
+
+      // the the heading of the section
+      heading='Get started'
+    >
+
       <Text fontSize='lg'>We offer a 30-day money back guarantee</Text>
 
       <Box
@@ -20,7 +28,11 @@ const GetStarted = () => {
             Pay with Bitcoin
           </Heading>
           <Text>1 month</Text>
-          <Text color='gray.500'>Send BTC 0.00012 ($4.50) to the following address: </Text>
+          <Text color='gray.500'>
+            Send BTC 0.00012 ($4.50) to the following address:{' '}
+          </Text>
+
+          {/* QR Code Start */}
           <Box
             borderWidth='1px'
             borderRadius='lg'
@@ -37,6 +49,8 @@ const GetStarted = () => {
             dolorum amet expedita sed! Illo exercitationem facilis asperiores
             magni, enim quia dicta accusantium doloribus ullam odio consequatur.
           </Box>
+          {/* QR Code End */}
+
           <Text bg='yellow.400' p='4' borderRadius='sm'>
             Processing the payment may take up to 30 minutes.
           </Text>
